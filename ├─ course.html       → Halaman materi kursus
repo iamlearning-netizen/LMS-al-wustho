@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kursus: Pengantar HTML</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Kursus: Pengantar HTML</h1>
+  <p>HTML adalah bahasa markup untuk membuat halaman web. Elemen HTML ditulis dengan tag, misalnya:</p>
+  <pre>&lt;h1&gt;Judul&lt;/h1&gt;</pre>
+  
+  <p><a href="index.html">⬅ Kembali</a> | <a href="quiz.html">Lanjut ke Quiz</a></p>
+</body>
+</html>
