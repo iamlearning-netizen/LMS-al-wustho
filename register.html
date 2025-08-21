@@ -2,38 +2,39 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Registrasi Akun Baru</title>
+  <title>Registrasi LMS</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Registrasi Akun Baru</h1>
+  <div class="container">
+    <h1>Registrasi Akun Baru</h1>
 
-  <form id="registerForm">
-    <label>Username:</label><br>
-    <input type="text" id="regUsername" required><br><br>
+    <form id="registerForm">
+      <label>Username:</label>
+      <input type="text" id="regUsername" required>
 
-    <label>Password:</label><br>
-    <input type="password" id="regPassword" required><br><br>
+      <label>Password:</label>
+      <input type="password" id="regPassword" required>
 
-    <label>Pilih Role:</label><br>
-    <select id="regRole" required>
-      <option value="Murid">Murid</option>
-      <option value="Guru">Guru</option>
-      <option value="Staff Akademik">Staff Akademik</option>
-      <option value="Staff Keuangan">Staff Keuangan</option>
-      <option value="Administrator">Administrator</option>
-    </select><br><br>
+      <label>Pilih Role:</label>
+      <select id="regRole" required>
+        <option value="Murid">Murid</option>
+        <option value="Guru">Guru</option>
+        <option value="Staff Akademik">Staff Akademik</option>
+        <option value="Staff Keuangan">Staff Keuangan</option>
+        <option value="Administrator">Administrator</option>
+      </select>
 
-    <button type="submit">Daftar</button>
-  </form>
+      <button type="submit">Daftar</button>
+    </form>
 
-  <p id="regError" style="color:red;"></p>
-  <p id="regSuccess" style="color:green;"></p>
-
-  <p>Sudah punya akun? <a href="login.html">Login di sini</a></p>
+    <p id="regError"></p>
+    <p id="regSuccess"></p>
+    <p>Sudah punya akun? <a href="login.html">Login di sini</a></p>
+  </div>
 
   <script>
-    // ambil user dari localStorage (kalau ada)
+    // Ambil user dari localStorage (atau default bawaan)
     let users = JSON.parse(localStorage.getItem("users")) || [
       { username: "admin", password: "12345", role: "Administrator" },
       { username: "akademik", password: "12345", role: "Staff Akademik" },
