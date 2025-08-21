@@ -6,39 +6,47 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Login LMS</h1>
+  <h1>Login ke LMS</h1>
+
   <form id="loginForm">
     <label>Username:</label><br>
     <input type="text" id="username" required><br><br>
-    
+
     <label>Password:</label><br>
     <input type="password" id="password" required><br><br>
-    
+
     <button type="submit">Login</button>
   </form>
-  <p id="msg" style="color:red"></p>
+
+  <p id="error" style="color:red;"></p>
 
   <script>
-    // Data user (untuk demo, password bisa diganti)
-    const users = {
-      "admin": { password: "1234", role: "Administrator" },
-      "akademik": { password: "1234", role: "Staff Akademik" },
-      "keuangan": { password: "1234", role: "Staff Keuangan" },
-      "guru": { password: "1234", role: "Guru" },
-      "murid": { password: "1234", role: "Murid" }
-    };
+    const users = [
+      { username: "admin", password: "12345", role: "Administrator" },
+      { username: "akademik", password: "12345", role: "Staff Akademik" },
+      { username: "keuangan", password: "12345", role: "Staff Keuangan" },
+      { username: "guru", password: "12345", role: "Guru" },
+      { username: "murid", password: "12345", role: "Murid" }
+    ];
 
-    document.getElementById("loginForm").addEventListener("submit", function(e) {
+    const form = document.getElementById("loginForm");
+    const errorMsg = document.getElementById("error");
+
+    form.addEventListener("submit", function(e) {
       e.preventDefault();
-      const uname = document.getElementById("username").value.toLowerCase();
-      const pass = document.getElementById("password").value;
-      const msg = document.getElementById("msg");
 
-      if (users[uname] && users[uname].password === pass) {
-        localStorage.setItem("role", users[uname].role);
-        window.location.href = "dashboard.html"; // redirect ke dashboard
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      const user = users.find(u => u.username === username && u.password === password);
+
+      if (user) {
+        // simpan ke localStorage
+        localStorage.setItem("role", user.role);
+        localStorage.setItem("username", user.username);
+        window.location.href = "dashboard.html";
       } else {
-        msg.textContent = "❌ Username atau password salah!";
+        errorMsg.textContent = "Username atau password salah!";
       }
     });
   </script>
