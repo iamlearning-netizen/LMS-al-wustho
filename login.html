@@ -21,13 +21,13 @@
   <p id="error" style="color:red;"></p>
 
   <script>
-    const users = [
-      { username: "admin", password: "12345", role: "Administrator" },
-      { username: "akademik", password: "12345", role: "Staff Akademik" },
-      { username: "keuangan", password: "12345", role: "Staff Keuangan" },
-      { username: "guru", password: "12345", role: "Guru" },
-      { username: "murid", password: "12345", role: "Murid" }
-    ];
+    const users = let users = JSON.parse(localStorage.getItem("users")) || [
+  { username: "admin", password: "12345", role: "Administrator" },
+  { username: "akademik", password: "12345", role: "Staff Akademik" },
+  { username: "keuangan", password: "12345", role: "Staff Keuangan" },
+  { username: "guru", password: "12345", role: "Guru" },
+  { username: "murid", password: "12345", role: "Murid" }
+];
 
     const form = document.getElementById("loginForm");
     const errorMsg = document.getElementById("error");
