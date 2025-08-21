@@ -24,20 +24,40 @@
 
     let items = [];
     if (role === "Administrator") {
-      items = ["Kelola User", "Kelola Kursus", "Laporan"];
+      items = [
+        { name: "Kelola User", link: "admin_kelola_user.html" },
+        { name: "Kelola Kursus", link: "admin_kelola_kursus.html" },
+        { name: "Laporan", link: "admin_laporan.html" }
+      ];
     } else if (role === "Staff Akademik") {
-      items = ["Input Jadwal", "Data Akademik"];
+      items = [
+        { name: "Input Jadwal", link: "akademik_jadwal.html" },
+        { name: "Data Akademik", link: "akademik_data.html" }
+      ];
     } else if (role === "Staff Keuangan") {
-      items = ["Pembayaran", "Tagihan"];
+      items = [
+        { name: "Pembayaran", link: "keuangan_pembayaran.html" },
+        { name: "Tagihan", link: "keuangan_tagihan.html" }
+      ];
     } else if (role === "Guru") {
-      items = ["Upload Materi", "Buat Quiz"];
+      items = [
+        { name: "Upload Materi", link: "guru_materi.html" },
+        { name: "Buat Quiz", link: "guru_quiz.html" }
+      ];
     } else if (role === "Murid") {
-      items = ["Lihat Materi", "Kerjakan Quiz", "Progress Belajar"];
+      items = [
+        { name: "Lihat Materi", link: "murid_materi.html" },
+        { name: "Kerjakan Quiz", link: "murid_quiz.html" },
+        { name: "Progress Belajar", link: "murid_progress.html" }
+      ];
     }
 
     items.forEach(i => {
       let li = document.createElement("li");
-      li.textContent = i;
+      let a = document.createElement("a");
+      a.textContent = i.name;
+      a.href = i.link;
+      li.appendChild(a);
       menu.appendChild(li);
     });
 
