@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>LMS Sederhana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>📚 LMS Sederhana</h1>
+  <p>Selamat datang di platform belajar sederhana.</p>
+
+  <h2>Daftar Kursus</h2>
+  <ul>
+    <li><a href="course.html">Pengantar HTML</a></li>
+    <li><a href="quiz.html">Quiz: HTML Dasar</a></li>
+  </ul>
+</body>
+</html>
