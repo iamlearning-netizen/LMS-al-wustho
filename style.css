@@ -1,25 +1,85 @@
+/* Style umum */
 body {
   font-family: Arial, sans-serif;
-  max-width: 700px;
-  margin: auto;
-  padding: 20px;
-  line-height: 1.6;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Card container */
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  width: 350px;
+  text-align: center;
 }
 
 h1 {
-  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
 }
 
+/* Form */
+form {
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #555;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #4a90e2;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #357ab7;
+}
+
+/* Pesan error & sukses */
+#error, #regError {
+  color: red;
+  font-size: 14px;
+}
+
+#regSuccess {
+  color: green;
+  font-size: 14px;
+}
+
+/* Link */
 a {
-  color: #2980b9;
+  color: #4a90e2;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
-}
-
-button {
-  padding: 8px 14px;
-  margin-top: 10px;
-  cursor: pointer;
 }
