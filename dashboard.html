@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard LMS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Dashboard</h1>
+  <p id="welcome"></p>
+  <ul id="menu"></ul>
+  <button onclick="logout()">Logout</button>
+
+  <script>
+    const role = localStorage.getItem("role");
+    const welcome = document.getElementById("welcome");
+    const menu = document.getElementById("menu");
+
+    if (!role) {
+      window.location.href = "login.html"; // kalau belum login
+    }
+
+    welcome.textContent = "Selamat datang, " + role;
+
+    let items = [];
+    if (role === "Administrator") {
+      items = ["Kelola User", "Kelola Kursus", "Laporan"];
+    } else if (role === "Staff Akademik") {
+      items = ["Input Jadwal", "Data Akademik"];
+    } else if (role === "Staff Keuangan") {
+      items = ["Pembayaran", "Tagihan"];
+    } else if (role === "Guru") {
+      items = ["Upload Materi", "Buat Quiz"];
+    } else if (role === "Murid") {
+      items = ["Lihat Materi", "Kerjakan Quiz", "Progress Belajar"];
+    }
+
+    items.forEach(i => {
+      let li = document.createElement("li");
+      li.textContent = i;
+      menu.appendChild(li);
+    });
+
+    function logout() {
+      localStorage.removeItem("role");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
